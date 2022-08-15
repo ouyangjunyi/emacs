@@ -89,3 +89,14 @@
    '((dark . doom-one)
      (light . doom-one)))
   )
+
+(setq org-publish-project-alist
+      '(
+        ("init"
+         :base-directory "~/tempo/orgmode"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "~/tempo/public"
+         )
+        ))
