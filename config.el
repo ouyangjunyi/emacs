@@ -75,7 +75,17 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(setq max-lisp-eval-depth 10000)
+;;(setq max-lisp-eval-depth 10000)
 
 (setq url-proxy-services '(("http" . "127.0.0.1:10014")))
 (setq url-proxy-services '(("https" . "127.0.0.1:10014")))
+
+
+
+(use-package! org-html-themify
+  :hook (org-mode . org-html-themify-mode)
+  :custom
+  (org-html-themify-themes
+   '((dark . doom-one)
+     (light . doom-one)))
+  )
