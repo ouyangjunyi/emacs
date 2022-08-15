@@ -111,3 +111,6 @@
          :publishing-directory "/root/orgmode_publish/outer"
          )
         ))
+
+;;https://hsingko.github.io/post/emacs/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral
+(add-hook 'org-mode-hook #'valign-mode)
