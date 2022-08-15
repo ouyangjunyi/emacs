@@ -90,13 +90,21 @@
      (light . doom-one)))
   )
 
+;; https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
 (setq org-publish-project-alist
       '(
-        ("init"
-         :base-directory "~/tempo/orgmode"
+        ("org-inner"
+         :base-directory "/root/study/project/markdown/inner/markdown_submodule"
          :base-extension "org"
          :recursive t
          :publishing-function org-html-publish-to-html
-         :publishing-directory "~/tempo/public"
+         :publishing-directory "/root/orgmode_publish/inner"
+         )
+        ("org-outer"
+         :base-directory "/root/study/project/markdown/outer/markdown_submodule"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "/root/orgmode_publish/outer"
          )
         ))
