@@ -54,3 +54,10 @@
     :recipe (:host github :repo "DogLooksGood/org-html-themify":files ("*.el" "*.js" "*.css")))
 
 (package! valign)
+
+(package! logview)
+
+(package! org-super-agenda)
+
+(package! org-now
+  :recipe (:host github :repo "alphapapa/org-now"))
