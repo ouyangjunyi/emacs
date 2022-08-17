@@ -105,4 +105,61 @@
         ))
 
 ;;https://hsingko.github.io/post/emacs/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral
+;;valign-mode does not support org-columns
 (add-hook 'org-mode-hook #'valign-mode)
+;;(def-package! cnfonts)
+;;(cnfonts-enable)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;(setq doom-font
+;;      (font-spec :family "Sarasa Mono SC Nerd" :size 10 :weight 'normal))
+;;
+;;(after! doom-big-font-mode
+;;  (setq doom-font
+;;        (font-spec :family "Sarasa Mono SC Nerd")))
+;;
+;;;; https://blog.csdn.net/xh_acmagic/article/details/78939246
+;;(defun +my/better-font()
+;;  (interactive)
+;;  ;; english font
+;;  (if (display-graphic-p)
+;;      (progn
+;;        (set-face-attribute 'default nil :font (format   "%s:pixelsize=%d" "Sarasa Mono SC Nerd" 18)) ;; 11 13 17 19 23
+;;        ;; chinese font
+;;        (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;          (set-fontset-font (frame-parameter nil 'font)
+;;                            charset
+;;                            (font-spec :family "Sarasa Mono SC Nerd")))) ;; 14 16 20 22 28
+;;    ))
+;;
+;;(defun +my|init-font(frame)
+;;  (with-selected-frame frame
+;;    (if (display-graphic-p)
+;;        (+my/better-font))))
+;;
+;;(if (and (fboundp 'daemonp) (daemonp))
+;;    (add-hook 'after-make-frame-functions #'+my|init-font)
+;;  (+my/better-font))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
+;; https://www.lujun9972.win/blog/2020/05/09/%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89org-mode%E4%B8%AD%E7%9A%84%E5%8A%A8%E6%80%81%E5%9D%97/index.html
+(defun org-dblock-write:block-update-time (params)
+  (let ((fmt (or (plist-get params :format) "%d. %m. %Y. %H:%M:%S")))
+    (insert "Last block update at: "
+            (format-time-string fmt))))
+
+(defun org-update-time-dblock ()
+  "Create a dynamic block capturing a column view table."
+  (interactive)
+  (org-create-dblock
+   (list :name "block-update-time"))
+  (org-update-dblock))
+
+
+(eval-after-load 'org
+                 '(progn
+                    (org-dynamic-block-define "update-time" 'org-update-time-dblock)))
+

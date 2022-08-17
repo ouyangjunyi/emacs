@@ -54,6 +54,7 @@
     :recipe (:host github :repo "DogLooksGood/org-html-themify":files ("*.el" "*.js" "*.css")))
 
 (package! valign)
+;;(package! cnfonts)
 
 (package! logview)
 
