@@ -80,8 +80,8 @@
 
 ;;(setq max-lisp-eval-depth 10000)
 
-;; (setq url-proxy-services '(("http" . "127.0.0.1:10014")))
-;; (setq url-proxy-services '(("https" . "127.0.0.1:10014")))
+(setq url-proxy-services '(("http" . "127.0.0.8889")))
+(setq url-proxy-services '(("https" . "127.0.0.8889")))
 ;;
 
 
