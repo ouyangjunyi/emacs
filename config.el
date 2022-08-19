@@ -171,3 +171,12 @@
                  '(progn
                     (org-dynamic-block-define "update-time" 'org-update-time-dblock)))
 
+(after! org
+ (setq org-todo-keywords
+  '((sequence "TODO(t)"
+      "DOING(i)"
+      "PAUSE(p)"
+      "DONE(d)"
+      "PAUSE(s)"
+      "KILL(k)")))
+  )
