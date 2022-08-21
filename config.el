@@ -39,7 +39,8 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
+;;(setq display-line-numbers-type t)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -194,3 +195,31 @@
 ;;                                   :tag bo)))
 ;;  :config
 ;;  (org-super-agenda-mode))
+
+;; treemacs
+;;https://github.com/domtronn/all-the-icons.el
+;;M-x all-the-icons-install-fonts
+ (setq doom-themes-treemacs-theme "doom-colors")
+
+(use-package! all-the-icons
+  :if (display-graphic-p))
+(defun doom*disable-all-the-icons-in-tty (orig-fn &rest args)
+  (if (display-graphic-p)
+      (apply orig-fn args)
+    ""))
+  
+
+
+;; Example configuration for Consult
+(use-package! consult
+  :config
+  (consult-customize
+   consult-theme
+   :preview-key '(:debounce 0.2 any)
+   consult-ripgrep consult-git-grep consult-grep
+   consult-bookmark consult-recent-file consult-xref
+   consult--source-bookmark consult--source-recent-file
+   consult--source-project-recent-file
+   :preview-key '(:debounce 0.2 any)
+   )
+)
