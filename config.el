@@ -212,6 +212,10 @@
 
 ;; Example configuration for Consult
 (use-package! consult
+  :bind(
+        ("C-c f" . consult-ripgrep)
+        ("C-c P" . consult-find)
+        )
   :config
   (consult-customize
    consult-theme
@@ -223,3 +227,16 @@
    :preview-key '(:debounce 0.2 any)
    )
 )
+
+;; clipboard
+(setq select-enable-clipboard nil)
+
+
+;; custom-keymap
+(map! :leader
+      (:prefix-map ("\\" . "oyjy")
+       (:prefix ("h" . "highlight")
+        :desc "on" "o" #'highlight-regexp
+        :desc "off" "f" #'unhighlight-regexp
+        )
+       ))
