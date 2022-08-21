@@ -202,3 +202,11 @@
 ;;                                   :tag bo)))
 ;;  :config
 ;;  (org-super-agenda-mode))
+
+;; treemacs
+;;https://github.com/domtronn/all-the-icons.el
+;;M-x all-the-icons-install-fonts
+ (setq doom-themes-treemacs-theme "doom-colors")
+
+(use-package! all-the-icons
+  :if (display-graphic-p))
