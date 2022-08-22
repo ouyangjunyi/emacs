@@ -245,6 +245,12 @@
   (setq select-enable-clipboard nil))
 
 
+(defun org-update-all-table-mine()
+  (interactive)
+  (org-update-all-dblocks)
+  (org-ctrl-c-ctrl-c)
+  )
+
 ;; custom-keymap
 (map! :leader
       (:prefix-map ("\\" . "oyjy")
@@ -261,4 +267,9 @@
        (
         :desc "paste clipboard" "p" #'paste-from-clipboard
         )
+       (:prefix ("o" . "orgmode")
+        :desc "org-update-all-dblocks" "u" #'org-update-all-table-mine
+        )
        ))
+
+(remove-hook 'tty-setup-hook #'xterm-mouse-mode)
