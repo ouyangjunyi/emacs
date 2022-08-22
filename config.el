@@ -247,4 +247,15 @@
     (message "clipper")
     )
   )
-(global-set-key (kbd "C-c y") 'clipper)
+
+;; custom-keymap
+(map! :leader
+      (:prefix-map ("\\" . "oyjy")
+       (
+        :desc "clipper" "c" #'clipper
+        )
+       (:prefix ("h" . "highlight")
+        :desc "on" "o" #'highlight-regexp
+        :desc "off" "f" #'unhighlight-regexp
+        )
+       ))
