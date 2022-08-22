@@ -82,8 +82,8 @@
 
 ;;(setq max-lisp-eval-depth 10000)
 
-(setq url-proxy-services '(("http" . "127.0.0.8889")))
-(setq url-proxy-services '(("https" . "127.0.0.8889")))
+;;(setq url-proxy-services '(("http" . "127.0.0.8889")))
+;;(setq url-proxy-services '(("https" . "127.0.0.8889")))
 ;;
 
 
@@ -199,11 +199,12 @@
 
 ;; treemacs
 ;;https://github.com/domtronn/all-the-icons.el
-;;M-x all-the-icons-install-fonts
  (setq doom-themes-treemacs-theme "doom-colors")
 
 (use-package! all-the-icons
   :if (display-graphic-p))
+
+;; add this to your private config (~/.doom.d/config.el)
 (defun doom*disable-all-the-icons-in-tty (orig-fn &rest args)
   (if (display-graphic-p)
       (apply orig-fn args)
