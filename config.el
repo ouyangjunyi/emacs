@@ -252,6 +252,9 @@
 (map! :leader
       (:prefix-map ("\\" . "oyjy")
        (
+        :desc "tabnine" "\\" #'company-tabnine
+        )
+       (
         :desc "clipper" "c" #'clipper
         )
        (:prefix ("h" . "highlight")
