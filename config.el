@@ -238,3 +238,13 @@
 
 ;; clipboard
 (setq select-enable-clipboard nil)
+
+
+(defun clipper()
+  (interactive)
+  (let ((xxx (get-register ?0)))
+    (shell-command (format "echo %s | nc -N localhost 8377" (shell-quote-argument xxx)))
+    (message "clipper")
+    )
+  )
+(global-set-key (kbd "C-c y") 'clipper)
