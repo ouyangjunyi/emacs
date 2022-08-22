@@ -68,3 +68,4 @@
 (package! consult)
 
 (package! company-tabnine)
+(package! disable-mouse)
