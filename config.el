@@ -237,6 +237,8 @@
   (setq select-enable-clipboard nil)
   )
 
+;; tabnine
+;; M-x company-tabnine-install-binary
 
 ;; custom-keymap
 (map! :leader
