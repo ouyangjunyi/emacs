@@ -251,6 +251,12 @@
   (org-ctrl-c-ctrl-c)
   )
 
+(defun org-update-all-table-mine()
+  (interactive)
+  (org-update-all-dblocks)
+  (org-ctrl-c-ctrl-c)
+  )
+
 ;; custom-keymap
 (map! :leader
       (:prefix-map ("\\" . "oyjy")
