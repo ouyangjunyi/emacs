@@ -238,6 +238,11 @@
   (kill-ring-save (region-beginning) (region-end))
   (setq select-enable-clipboard nil)
   )
+(defun paste-from-clipboard ()
+  (interactive)
+  (setq select-enable-clipboard t)
+  (clipboard-yank)
+  (setq select-enable-clipboard nil))
 
 
 ;; custom-keymap
@@ -252,5 +257,8 @@
         )
        (
         :desc "copy clipboard" "y" #'copy-to-clipboard
+        )
+       (
+        :desc "paste clipboard" "p" #'paste-from-clipboard
         )
        ))
