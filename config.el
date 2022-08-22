@@ -235,6 +235,9 @@
 ;; custom-keymap
 (map! :leader
       (:prefix-map ("\\" . "oyjy")
+       (
+        :desc "tabnine" "\\" #'company-tabnine
+        )
        (:prefix ("h" . "highlight")
         :desc "on" "o" #'highlight-regexp
         :desc "off" "f" #'unhighlight-regexp

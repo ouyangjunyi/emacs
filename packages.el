@@ -66,3 +66,5 @@
 ;; https://github.com/minad/consult#live-previews    <=>  telescope
 ;; https://www.youtube.com/watch?v=UtqE-lR2HCA
 (package! consult)
+
+(package! company-tabnine)
