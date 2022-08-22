@@ -232,6 +232,12 @@
 
 ;; clipboard
 (setq select-enable-clipboard nil)
+(defun copy-to-clipboard()
+  (interactive)
+  (setq select-enable-clipboard t)
+  (kill-ring-save (region-beginning) (region-end))
+  (setq select-enable-clipboard nil)
+  )
 
 
 ;; custom-keymap
@@ -243,5 +249,8 @@
        (:prefix ("h" . "highlight")
         :desc "on" "o" #'highlight-regexp
         :desc "off" "f" #'unhighlight-regexp
+        )
+       (
+        :desc "copy clipboard" "y" #'copy-to-clipboard
         )
        ))
