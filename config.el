@@ -261,4 +261,7 @@
         :desc "on" "o" #'highlight-regexp
         :desc "off" "f" #'unhighlight-regexp
         )
+       (:prefix ("o" . "orgmode")
+        :desc "org-update-all-dblocks" "u" #'org-update-all-dblocks
+        )
        ))
