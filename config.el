@@ -115,7 +115,7 @@
 
 ;;https://hsingko.github.io/post/emacs/?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral
 ;;valign-mode does not support org-columns
-(add-hook 'org-mode-hook #'valign-mode)
+;;(add-hook 'org-mode-hook #'valign-mode)
 ;;(def-package! cnfonts)
 ;;(cnfonts-enable)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
