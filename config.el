@@ -282,3 +282,21 @@
         evil-normal-state-map
         evil-visual-state-map
         evil-insert-state-map))
+
+;; esc键位问题 https://emacs.stackexchange.com/questions/14755/how-to-remove-bindings-to-the-esc-prefix-key
+(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+
+
+ ;; :q should kill the current buffer rather than quitting emacs entirely
+(evil-ex-define-cmd "q" 'delete-window)
+
+(use-package evil
+:bind (
+       (:map evil-normal-state-map
+             ("gt" . tab-next)
+             ("gT" . tab-previous)
+             ))
+:config (evil-mode 1))
+
+;; tabs c-x t
+(define-key evil-window-map "T" 'tab-new)
