@@ -300,3 +300,4 @@
 
 ;; tabs c-x t
 (define-key evil-window-map "T" 'tab-new)
+(setq centaur-tabs-mode nil)
