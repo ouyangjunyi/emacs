@@ -11,7 +11,7 @@
   "a list of scripts to be included in org-html-head")
 (after! ox-html
   (add-hook 'org-export-before-processing-hook #'+org/org-embed-header)
-  (advice-add #'org-html--format-image :override #'+org*org-html--format-image)
+  ;;(advice-add #'org-html--format-image :override #'+org*org-html--format-image)
   (advice-add 'org-html--tags :override #'+org-private/org-html--tags)
   (setq org-html-checkbox-type 'html
         org-html-mathjax-options
