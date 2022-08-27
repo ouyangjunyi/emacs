@@ -86,13 +86,13 @@
 
 
 
-(use-package! org-html-themify
-  :hook (org-mode . org-html-themify-mode)
-  :custom
-  (org-html-themify-themes
-   '((dark . doom-one)
-     (light . doom-one)))
-  )
+;;(use-package! org-html-themify
+;;  :hook (org-mode . org-html-themify-mode)
+;;  :custom
+;;  (org-html-themify-themes
+;;   '((dark . doom-one)
+;;     (light . doom-one)))
+;;  )
 
 ;; https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
 (setq org-publish-project-alist
@@ -301,3 +301,10 @@
 ;; tabs c-x t
 (define-key evil-window-map "T" 'tab-new)
 (setq centaur-tabs-mode nil)
+
+;;(global-visual-line-mode 0)
+;;
+;;(add-hook 'org-mode-hook
+;;	  (lambda()
+;;	    (setq truncate-lines nil)))
+

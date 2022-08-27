@@ -50,8 +50,8 @@
 ;(unpin! t)
 
 (package! tldr)
-(package! org-html-themify
-    :recipe (:host github :repo "DogLooksGood/org-html-themify":files ("*.el" "*.js" "*.css")))
+;;(package! org-html-themify
+;;    :recipe (:host github :repo "DogLooksGood/org-html-themify":files ("*.el" "*.js" "*.css")))
 
 ;;(package! valign)
 ;;(package! cnfonts)
