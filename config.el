@@ -85,6 +85,13 @@
 (setq url-proxy-services '(("https" . "127.0.0.1:10014")))
 
 
+;;(use-package! org-html-themify
+;;  :hook (org-mode . org-html-themify-mode)
+;;  :custom
+;;  (org-html-themify-themes
+;;   '((dark . doom-one)
+;;     (light . doom-one)))
+;;  )
 
 ;;(use-package! org-html-themify
 ;;  :hook (org-mode . org-html-themify-mode)
