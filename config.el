@@ -87,13 +87,13 @@
 ;;
 
 
-(use-package! org-html-themify
-  :hook (org-mode . org-html-themify-mode)
-  :custom
-  (org-html-themify-themes
-   '((dark . doom-one)
-     (light . doom-one)))
-  )
+;;(use-package! org-html-themify
+;;  :hook (org-mode . org-html-themify-mode)
+;;  :custom
+;;  (org-html-themify-themes
+;;   '((dark . doom-one)
+;;     (light . doom-one)))
+;;  )
 
 (setq org-publish-project-alist
       '(
@@ -282,3 +282,11 @@
         evil-normal-state-map
         evil-visual-state-map
         evil-insert-state-map))
+
+
+;;(global-visual-line-mode 0)
+;;
+;;(add-hook 'org-mode-hook
+;;	  (lambda()
+;;	    (setq truncate-lines nil)))
+
