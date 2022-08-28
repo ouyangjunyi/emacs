@@ -1,9 +1,28 @@
 #!/usr/bin/env doomscript
 
-(defcli! export-notes (&args files)
-  (require 'doom-start)          ; load your user config
-  (dolist (file files)           ; supports multiple files, if you want
-    (find-file file)             ; open an org file
-    (org-html-export-to-html)))  ; and export it
 
-(run! "export-notes" (cdr (member "--" argv)))
+(defcli! export-notes (&args files)
+ (require 'doom-start)          ; load your user config
+
+ (setq org-publish-project-alist
+  '(
+    ("org-inner"
+     :base-directory "/root/study/project/markdown/inner/markdown_submodule"
+     :base-extension "org"
+     :recursive t
+     :publishing-function org-html-publish-to-html
+     :publishing-directory "/root/orgmode_publish/inner"
+    )
+   ))
+
+ (org-mode)
+ (org-publish-project "org-inner")
+ )
+
+  ;  (dolist (file files)           ; supports multiple files, if you want
+      ;    (find-file file)             ; open an org file
+      ;    (message file)
+      ;    (org-publish-current-project)))  ; and export it
+      ;   ; (org-html-export-to-html)))  ; and export it
+
+      (run! "export-notes" (cdr (member "--" argv)))
