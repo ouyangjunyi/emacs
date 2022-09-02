@@ -1,22 +1,32 @@
 #!/usr/bin/env doomscript
 
 
-(defcli! export-notes (&args files)
+(defcli! export-notes (&args projects)
  (require 'doom-start)          ; load your user config
 
- (setq org-publish-project-alist
-  '(
-    ("org-inner"
-     :base-directory "/root/study/project/markdown/inner/markdown_submodule"
-     :base-extension "org"
-     :recursive t
-     :publishing-function org-html-publish-to-html
-     :publishing-directory "/root/orgmode_publish/inner"
-    )
-   ))
+(setq org-publish-project-alist
+      '(
+        ("org-inner"
+         :base-directory "/root/study/notes/inner/markdown_submodule"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "/root/org_publish/inner"
+         )
+        ("org-outer"
+         :base-directory "/root/study/notes/outer/markdown_submodule"
+         :base-extension "org"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "/root/org_publish/outer"
+         )
+        ))
 
- (org-mode)
- (org-publish-project "org-inner")
+(org-mode)
+  (dolist (project projects)           ; supports multiple projects, if you want
+   (org-publish-project project)
+  )
+
  )
 
   ;  (dolist (file files)           ; supports multiple files, if you want
