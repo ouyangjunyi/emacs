@@ -7,20 +7,21 @@
 (setq org-publish-project-alist
       '(
         ("org-inner"
-         :base-directory "/root/study/notes/inner/markdown_submodule"
+         :base-directory "/home/oyjy/study/notes/inner/markdown_submodule"
          :base-extension "org"
          :recursive t
          :publishing-function org-html-publish-to-html
-         :publishing-directory "/root/org_publish/inner"
+         :publishing-directory "/home/oyjy/org_publish/inner"
          )
         ("org-outer"
-         :base-directory "/root/study/notes/outer/markdown_submodule"
+         :base-directory "/home/oyjy/study/notes/outer/markdown_submodule"
          :base-extension "org"
          :recursive t
          :publishing-function org-html-publish-to-html
-         :publishing-directory "/root/org_publish/outer"
+         :publishing-directory "/home/oyjy/org_publish/outer"
          )
-        ))
+        )
+      )
 
 (org-mode)
   (dolist (project projects)           ; supports multiple projects, if you want

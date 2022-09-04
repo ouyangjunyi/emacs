@@ -105,18 +105,18 @@
 (setq org-publish-project-alist
       '(
         ("org-inner"
-         :base-directory "/root/study/project/markdown/inner/markdown_submodule"
+         :base-directory "/home/oyjy/study/notes/inner/markdown_submodule"
          :base-extension "org"
          :recursive t
          :publishing-function org-html-publish-to-html
-         :publishing-directory "/root/orgmode_publish/inner"
+         :publishing-directory "/home/oyjy/org_publish/inner"
          )
         ("org-outer"
-         :base-directory "/root/study/project/markdown/outer/markdown_submodule"
+         :base-directory "/home/oyjy/study/notes/outer/markdown_submodule"
          :base-extension "org"
          :recursive t
          :publishing-function org-html-publish-to-html
-         :publishing-directory "/root/orgmode_publish/outer"
+         :publishing-directory "/home/oyjy/org_publish/outer"
          )
         ))
 
