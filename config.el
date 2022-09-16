@@ -255,11 +255,13 @@
     )
   )
 
-(defun org-update-all-table-mine()
-  (interactive)
-  (org-update-all-dblocks)
-  (org-ctrl-c-ctrl-c)
-  )
+;;(defun org-update-all-table-mine()
+;;  (interactive)
+;;  (org-update-all-dblocks)
+;;  (org-ctrl-c-ctrl-c)
+;;  )
+
+(add-hook #'org-ctrl-c-ctrl-c-hook #'org-update-all-dblocks)
 
 ;; custom-keymap
 (map! :leader
