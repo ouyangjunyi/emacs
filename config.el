@@ -261,6 +261,11 @@
   (org-ctrl-c-ctrl-c)
   )
 
+(defun oyjyx()
+  (interactive)
+  (org-table-delete-column 4)
+  )
+
 ;; custom-keymap
 (map! :leader
       (:prefix-map ("\\" . "oyjy")
