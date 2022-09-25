@@ -185,7 +185,6 @@
   '((sequence "TODO(t)"
       "DOING(i)"
       "PAUSE(p)"
-      "PAUSE(s)"
       "DONE(d)"
       )))
   )
